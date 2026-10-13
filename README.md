@@ -1,114 +1,71 @@
-# Tugas-6
-VI. Tugas
+Tugas 6
 
-Eksekusi seluruh profile yang ada:
-a. Edit file /etc/profile dan tampilkan pesan sebagai berikut:
 
-echo "Profile dari /etc/profile"
+Eksekusi seluruh profile yang ada :
 
-b. Asumsi nama anda stD02001, maka edit semua profile yang ada yaitu:
+a. Edit file profile /etc/profile dan tampilkan pesan sebagai berikut : echo “Profile dari /etc/profile”
 
-/home/stD02001/.bash_profile /home/stD02001/.bash_login /home/mahasiswa/.profile /home/mahasiswa/.bashrc
+<img width="498" height="186" alt="image" src="https://github.com/user-attachments/assets/0c6926d5-08f9-454e-8d68-d4688a5532c5" />
 
-Ganti nama /home/mahasiswa dengan nama anda sendiri. Pada setiap file tersebut, cantumkan instruksi echo, misalnya pada /home/mahasiswa/.bash_profile:
 
-echo "Profile dari .bash_profile"
+b. Asumsi nama anda stD02001, maka edit semua profile yang ada yaitu :
 
-Lakukan hal yang sama untuk file lainnya, sesuaikan tampilan dengan nama file yang bersangkutan.
+<img width="800" height="600" alt="image" src="https://github.com/user-attachments/assets/4f244d77-eb69-495f-b890-a8282d41c689" />
 
-c. Jalankan instruksi substitute user, kemudian keluar dengan perintah exit sebagai berikut:
+Ganti nama /home/mahasiswa dengan nama anda sendiri. Pada setiap file tersebut, cantumkan instruksi echo, misalnya pada /home/ mahasiswa/.bash_profile : echo “Profile dari .bash_profile” Lakukan hal yang sama untuk file lainnya, sesuaikan tampilan dengan nama file yang bersangkutan.
 
-$ su mahasiswa $ exit
 
-kemudian gunakan opsi – sebagai berikut:
+c. Jalankan instruksi subtitute user, kemudian keluar dengan perintah exit sebagai berikut:
 
-$ su - mahasiswa $ exit
+<img width="800" height="600" alt="image" src="https://github.com/user-attachments/assets/dfc6d412-f11b-4df9-ad09-6bb3fab2cae9" />
 
-Jelaskan perbedaan kedua utilitas tersebut.
+
 
 Prompt String (PS)
-a. Edit file .bash_profile, ganti prompt PS1 dengan '>'. Instruksi export diperlukan dengan parameter nama variable tersebut, agar perubahan variable PS1 dikenal oleh shell.
+a. Edit file .bash_profile, ganti prompt PS1 dengan ‘>’. Instruksi export diperlukan dengan parameter nama variable tersebut, agar perubahan variable PS1 dikenal oleh semua shell
 
-PS1='> ' export PS1
 
-b. Eksperimen hasil PS1:
+<img width="800" height="600" alt="image" src="https://github.com/user-attachments/assets/7da3c318-7ede-4ffc-b69a-7d5e9e24f9c3" />
 
-$ PS1="! > " 69 > PS1="\d > " Mon Sep 23 > PS1="\t > " 10:10:20 > PS1="Saya=\u > " Saya=mahasiswa > PS1="\w > " ~ > PS1=\h >"
 
+b. Eksperimen hasil PS1 :
+
+2a
 Logout
-Edit file .bash_logout, tampilkan pesan dan tahan selama 5 detik, sebelum eksekusi logout.
+3 tugas 6
+Bash script a. Buat 3 buah script p1.sh, p2.sh, p3.sh dengan isi masing-masing : p1.sh #! /bin/bash
+4 a 1
+p2.sh #! /bin/bash
 
-Echo "Terima kasih atas sesi yang diberikan" Sleep 5 clear
+4 a 2
+p3.sh #! /bin/bash
 
-Bash script
-a. Buat 3 buah script p1.sh, p2.sh, p3.sh dengan isi masing-masing:
+4 a 3
+b. Jalankan script tersebut sebagai berikut : 4b1
 
-p1.sh
+4b2 42b3 4b4
+Jobs a. Buat shell-script yang melakukan loop dengan nama pwaktu.sh, setiap 10 detik, kemudian menyimpan tanggal dan jam pada file hasil.
+5 tugas 6
+b. Jalankan sebagai background; kemudian jalankan satu program (utilitas find) di background sebagai berikut :
 
-#!/bin/bash echo "Program p1" ls -l
+5b
+c. Jadikan program ke 1 sebagai foreground, tekan ^Z dan kembalikan program tersebut ke background
 
-p2.sh
-
-#!/bin/bash echo "Program p2" who
-
-p3.sh
-
-#!/bin/bash echo "Program p3" ps x
-
-b. Jalankan script tersebut sebagai berikut:
-
-$ ./p1.sh ; ./p3.sh ; ./p2.sh
-
-$ ./p1.sh &
-
-$ ./p1.sh & ./p2.sh & ./p3.sh &
-
-Jobs
-a. Buat shell-script yang melakukan loop dengan nama nyawaktu.sh, setiap 10 detik, kemudian menyimpan tanggal dan jam pada file hasil.
-
-#!/bin/bash
-
-while [ true ] do date >> hasil sleep 10 done
-
-b. Jalankan sebagai background, kemudian jalankan satu program (utilitas find) di background sebagai berikut:
-
-$ jobs
-
-$ find . -print > files 2>/dev/null &
-
-$ jobs
-
-c. Jadikan program ke 1 sebagai foreground, tekan ^Z dan kembalikan program tersebut ke background.
-
-$ fg %1
-
-$ bg
-
+5c
 d. Stop program background dengan utilitas kill
 
-$ ps x
-
-$ kill [Nomor PID]
-
-History
-a. Ganti nilai HISTSIZE dari 1000 menjadi 20
-
-$ HISTSIZE=20
-
-$ h
-
+5d
+History a. Ganti nilai HISTSIZE dari 1000 menjadi 20
+6a1
 b. Gunakan fasilitas history dengan mengedit instruksi baris ke 5 dari instruksi yang terakhir dilakukan
 
-$ !-5
+6b
+c. Ulangi instruksi yang terakhir. Gunakan juga ^P dan ^N untuk bernavigasi pada history bufer
 
-c. Ulangi instruksi yang terakhir. Gunakan juga ^P dan ^N untuk bernavigasi pada history buffer
+6c
+d. Ulangi instruksi pada history bufer nomor 150
 
-$ !!
+6d
+e. Ulangi instruksi dengan prefix “ls”
 
-d. Ulangi instruksi pada history buffer nomor 150
-
-$ !150
-
-e. Ulangi instruksi dengan prefix "ls"
-
-$ !ls
+6e
